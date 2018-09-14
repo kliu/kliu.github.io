@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+  <meta name="google-site-verification" content="jCq_9ygj5Yzjm_vFsmqt8WGt5kl0ttcn2Deb4DD-CG0">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-next.png?v=6.3.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-next.png?v=6.3.0">
+
+
+  <link rel="mask-icon" href="/logo.svg?v=6.3.0" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '6.3.0',
+    sidebar: {"position":"left","display":"hide","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="Git Basic Git Branch Git Rollback Git Remote Git Submodule Git Tag   Git Basic123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#Create git repogit init#Clone git">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Git">
+<meta property="og:url" content="http://wonderland.d01.cz/pages/cheats/git.html">
+<meta property="og:site_name" content="Discoveries . Memories . Thoughts">
+<meta property="og:description" content="Git Basic Git Branch Git Rollback Git Remote Git Submodule Git Tag   Git Basic123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#Create git repogit init#Clone git">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2016-03-19T08:40:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Git">
+<meta name="twitter:description" content="Git Basic Git Branch Git Rollback Git Remote Git Submodule Git Tag   Git Basic123456789101112131415161718192021222324252627282930313233343536373839404142434445464748#Create git repogit init#Clone git">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Discoveries . Memories . Thoughts" type="application/atom+xml">
+
+
+
+
+  <link rel="canonical" href="http://wonderland.d01.cz/pages/cheats/git.html">
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Git | Discoveries . Memories . Thoughts</title>
+  
+
+
+
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-25361308-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-25361308-1');
+</script>
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Discoveries . Memories . Thoughts</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">How great is the sum of them. If I should count them, they are more in number than the sand.</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br>Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+    
+    
+      
+      
+    
+      
+      
+    
+      
+      
+    
+    
+
+  
+
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+    
+    
+    <div class="post-block page">
+      <header class="post-header">
+
+<h2 class="post-title" itemprop="name headline">Git</h2>
+
+<div class="post-meta">
+  
+  
+
+
+  
+  
+  <ul class="breadcrumb">
+    
+      
+      
+        
+          <li><a href="/pages/">PAGES</a></li>
+          
+            
+          
+        
+      
+    
+      
+      
+        
+          <li>CHEATS</li>
+        
+      
+    
+      
+      
+        
+          <li><a href="/pages/git.html/">GIT.HTML</a></li>
+          
+            
+          
+        
+      
+    
+  </ul>
+
+
+</div>
+
+</header>
+
+      
+      
+      
+      <div class="post-body">
+        
+        
+          <ul>
+<li><a href="#git-basic">Git Basic</a></li>
+<li><a href="#git-branch">Git Branch</a></li>
+<li><a href="#git-rollback">Git Rollback</a></li>
+<li><a href="#git-remote">Git Remote</a></li>
+<li><a href="#git-submodule">Git Submodule</a></li>
+<li><a href="#git-tag">Git Tag</a></li>
+</ul>
+<hr>
+<h4 id="Git-Basic"><a href="#Git-Basic" class="headerlink" title="Git Basic"></a><span id="git-basic">Git Basic</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Create git repo</span></span><br><span class="line">git init</span><br><span class="line"></span><br><span class="line"><span class="comment">#Clone git repo to target_dir</span></span><br><span class="line">git <span class="built_in">clone</span> <span class="variable">$repo_path_or_uri</span> [-b <span class="variable">$branchName</span>] [<span class="variable">$target_dir</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Add filesdir to the index</span></span><br><span class="line">git add <span class="variable">$file</span></span><br><span class="line">git add .</span><br><span class="line"></span><br><span class="line"><span class="comment">#Commit with comments</span></span><br><span class="line">git -m <span class="string">"comments"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Show the working tree status</span></span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line"><span class="comment">#Show changes between commits, commit and working tree</span></span><br><span class="line">git diff <span class="variable">$id1</span> <span class="variable">$id2</span></span><br><span class="line"><span class="comment">#Show modify details of each line of a file</span></span><br><span class="line">git blame <span class="variable">$file</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Show commit logs</span></span><br><span class="line">git <span class="built_in">log</span> [--oneline --decorate] [-p]</span><br><span class="line"><span class="comment">#Manage reflog information</span></span><br><span class="line">git reflog</span><br><span class="line"><span class="comment">#Show various types of objects</span></span><br><span class="line">git show <span class="variable">$id</span>/<span class="variable">$id</span>:<span class="variable">$file</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Get tag by commit id</span></span><br><span class="line">git name-rev --name-only <span class="variable">$commitid</span></span><br><span class="line"><span class="comment">#Get branch by commit id</span></span><br><span class="line">git branch --contains <span class="variable">$commitid</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#To see which files have been commited</span></span><br><span class="line">git ``ls``-files</span><br><span class="line"></span><br><span class="line"><span class="comment">#Add the specified commit to current branch</span></span><br><span class="line">git cherry-pick <span class="variable">$id</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Archive code</span></span><br><span class="line">git archive —format=zip/tar —prefix=directory/version &gt; <span class="variable">$file</span>.zip</span><br><span class="line"></span><br><span class="line"><span class="comment">#Search</span></span><br><span class="line">git rev-list --all | (</span><br><span class="line">  <span class="keyword">while</span> <span class="built_in">read</span> revision; <span class="keyword">do</span></span><br><span class="line">      git grep -F <span class="string">'Your search string'</span> <span class="variable">$revision</span></span><br><span class="line">  <span class="keyword">done</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Git-Branch"><a href="#Git-Branch" class="headerlink" title="Git Branch"></a><span id="git-branch">Git Branch</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#List Branch</span></span><br><span class="line">git branch [-a]</span><br><span class="line"><span class="comment">#Create a local branch based on HEAD or other branch or tag</span></span><br><span class="line">git branch <span class="variable">$branchName</span> [<span class="variable">$otherbranch</span>/<span class="variable">$tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Delete local or remote branch</span></span><br><span class="line">git branch -d <span class="variable">$branchName</span></span><br><span class="line">git push <span class="variable">$remoteRepoName</span> :<span class="variable">$remoteBranchName</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Switch to branch</span></span><br><span class="line">git checkout <span class="variable">$name</span></span><br><span class="line"><span class="comment">#Equivalent to create new branch and switch to it.</span></span><br><span class="line">git checkout -b <span class="variable">$name</span> [<span class="variable">$otherbranch</span>/<span class="variable">$tag</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Merge specified branch (local or remote) to current branch</span></span><br><span class="line">git merge [--no-ff] <span class="variable">$branchName</span></span><br><span class="line">git merge <span class="variable">$remoteRepoName</span>/<span class="variable">$remoteBranchName</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Fetch objects from remote repo, but doesn't merge</span></span><br><span class="line">git fetch [<span class="variable">$remoteRepoName</span>]</span><br><span class="line"><span class="comment">#Fetch and merge the tracking remote branch to local branch</span></span><br><span class="line">git pull [<span class="variable">$remoteRepoName</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Local Branch track remote branch</span></span><br><span class="line">git branch --<span class="built_in">set</span>-upstream <span class="variable">$localBranch</span> <span class="variable">$remoteRepo</span>/<span class="variable">$remoteBranch</span>  (git 1.7)</span><br><span class="line">git branch -u <span class="variable">$remoteRepo</span>/<span class="variable">$remoteBranch</span> <span class="variable">$localBranch</span>  (git 1.8)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Push changes on current local branch to the tracking remote branch</span></span><br><span class="line">git push</span><br><span class="line"><span class="comment">#Push changes on %localBranch% to remote, create remote branch when it isn't exist.</span></span><br><span class="line">git push <span class="variable">$remoteRepo</span> <span class="variable">$localBranch</span>:<span class="variable">$remoteBranch</span></span><br><span class="line">git push [-u] <span class="variable">$remoteRepo</span> <span class="variable">$branchName</span> (<span class="variable">$localBranch</span> == <span class="variable">$remoteBranch</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Create a local branch and switch to it, then push the local branch to remote</span></span><br><span class="line">git checkout -b <span class="variable">$newBranch</span> [<span class="variable">$basedBranch</span>]</span><br><span class="line">git push <span class="variable">$remoteRepo</span> <span class="variable">$newBranch</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Fetch all remote changes, then create and switch a local branch based on the remote branch and tracking it.</span></span><br><span class="line">git fetch [<span class="variable">$remoteRepo</span>]</span><br><span class="line">git checkout -b <span class="variable">$branchName</span> <span class="variable">$remoteRepo</span>/<span class="variable">$branchName</span></span><br><span class="line">        </span><br><span class="line"><span class="comment">#Use branchB overwrite branchA</span></span><br><span class="line">git checkout <span class="variable">$branchB</span></span><br><span class="line">git merge -s ours <span class="variable">$branchA</span></span><br><span class="line">git checkout <span class="variable">$branchA</span></span><br><span class="line">git merge <span class="variable">$branchB</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Solve merge conflict</span></span><br><span class="line">git checkout --ours/theirs <span class="variable">$fileName</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Pull and discard remote changes</span></span><br><span class="line">git pull --strategy=ours origin master</span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Git-Rollback"><a href="#Git-Rollback" class="headerlink" title="Git Rollback"></a><span id="git-rollback">Git Rollback</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Discard changes of tracked but unstaged files</span></span><br><span class="line">git checkout -- <span class="variable">$file</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Remove all untracked files, but doesn't touch the files ignored by git</span></span><br><span class="line">git clean -df (Use -xdf to remove untracked+ignored files)</span><br><span class="line"><span class="comment">#Remove only files ignored by git, but keep manually created files</span></span><br><span class="line">git clean -Xdf</span><br><span class="line"></span><br><span class="line"><span class="comment">#Reset files to specified version</span></span><br><span class="line">git reset --soft/hard/mixed <span class="variable">$id</span></span><br><span class="line">    <span class="comment"># --soft, doesn't touch the staged/unstaged/untracked files.</span></span><br><span class="line">    <span class="comment"># --mixed, and move staged files to original state(unstaged or untracked), </span></span><br><span class="line">    <span class="comment">#          doesn't touch the unstaged/untracked files.</span></span><br><span class="line">    <span class="comment"># --hard, also reset staged/unstaged files, doesn't touch the untracked files.</span></span><br><span class="line">    <span class="comment"># There are 4 status of the gited files, commited(git-commit), staged(git-add), </span></span><br><span class="line">    <span class="comment"># unstaged(modified/deleted file), untracked(new file). </span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Redo the last time commit, with new indexed file and comments</span></span><br><span class="line">git commit -a --amend    </span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Git-Remote"><a href="#Git-Remote" class="headerlink" title="Git Remote"></a><span id="git-remote">Git Remote</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#List remote repos</span></span><br><span class="line">git remote [-v]</span><br><span class="line"><span class="comment">#Show infomataion of remote repo</span></span><br><span class="line">git remote show <span class="variable">$remoteRepoName</span></span><br><span class="line"><span class="comment">#Add remote repo and specify a alias name for it</span></span><br><span class="line">git remote add <span class="variable">$remoteRepoName</span> <span class="variable">$URL</span></span><br><span class="line"><span class="comment">#Change the alias name of remote repo</span></span><br><span class="line">git remote rename <span class="variable">$oldRepoName</span> <span class="variable">$newRepoName</span></span><br><span class="line"><span class="comment">#Forget remote repo</span></span><br><span class="line">git remote rm <span class="variable">$remoteRepoName</span></span><br><span class="line"><span class="comment">#Cleanup remote repo, used to cleanup deleted remote branch</span></span><br><span class="line">git remote prune <span class="variable">$remoteRepoName</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Git-Submodule"><a href="#Git-Submodule" class="headerlink" title="Git Submodule"></a><span id="git-submodule">Git Submodule</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#Add submodule</span></span><br><span class="line">git submodule add <span class="variable">$gitURI</span> <span class="variable">$path_to_submodule</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Update submodules</span></span><br><span class="line">git submodule update --init --recursive</span><br><span class="line">    </span><br><span class="line"><span class="comment">#Remove submodule.</span></span><br><span class="line">    <span class="comment">#Delete the relevant line from the .gitmodules file.</span></span><br><span class="line">    <span class="comment">#Delete the relevant section from .git/config.</span></span><br><span class="line">git rm --cached path_to_submodule <span class="comment">#no trailing slash</span></span><br><span class="line">    <span class="comment">#Commit the superproject.</span></span><br><span class="line">    <span class="comment">#Delete the now untracked submodule files.</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#Change submodule repo URL</span></span><br><span class="line">    <span class="comment">#Modify .gitmodule file to use the new URL</span></span><br><span class="line">git submodule sync</span><br><span class="line"></span><br><span class="line"><span class="comment">#当第一次更新或克隆submodule（非添加）时，submodule的代码会被拿下来，但是submodule的工作区没和任何branch绑定，因此需要先checkout到branch上，才能修改submodule，例如checkout master. </span></span><br></pre></td></tr></table></figure>
+<hr>
+<h4 id="Git-Tag"><a href="#Git-Tag" class="headerlink" title="Git Tag"></a><span id="git-tag">Git Tag</span></h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#List tags </span></span><br><span class="line">git tag</span><br><span class="line">git tag -l <span class="string">"name*"</span></span><br><span class="line"><span class="comment">#Create a tag with comments</span></span><br><span class="line">git tag -a <span class="variable">$name</span> [<span class="variable">$commitID</span>] [-m <span class="string">"comment"</span>]</span><br><span class="line"><span class="comment">#Delete tag</span></span><br><span class="line">git tag -d <span class="variable">$name</span></span><br><span class="line"><span class="comment">#Push specified tag or all tags to remote repo</span></span><br><span class="line">git push <span class="variable">$tagName</span>/--tags</span><br></pre></td></tr></table></figure>
+
+        
+      </div>
+      
+      
+      
+    </div>
+    
+
+
+  
+  
+  <ul class="breadcrumb">
+    
+      
+      
+        
+          <li><a href="/pages/">PAGES</a></li>
+          
+            
+          
+        
+      
+    
+      
+      
+        
+          <li>CHEATS</li>
+        
+      
+    
+      
+      
+        
+          <li><a href="/pages/git.html/">GIT.HTML</a></li>
+          
+            
+          
+        
+      
+    
+  </ul>
+
+
+    
+    
+    
+  </div>
+
+
+          </div>
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/avatar.png" alt="Liu Zhiyu">
+            
+              <p class="site-author-name" itemprop="name">Liu Zhiyu</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">15</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                    <span class="site-state-item-count">1</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/kliu" target="_blank" title="GitHub" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-github"></i></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/kyleliu" target="_blank" title="Twitter" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-twitter"></i></a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.linkedin.com/in/kyleliu" target="_blank" title="Linkedin" rel="external nofollow noopener noreferrer"><i class="fa fa-fw fa-linkedin"></i></a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" class="cc-opacity" target="_blank" rel="external nofollow noopener noreferrer">
+                <img src="/images/cc-by-nc-nd.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Basic"><span class="nav-number">1.</span> <span class="nav-text">Git Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Branch"><span class="nav-number">2.</span> <span class="nav-text">Git Branch</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Rollback"><span class="nav-number">3.</span> <span class="nav-text">Git Rollback</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Remote"><span class="nav-number">4.</span> <span class="nav-text">Git Remote</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Submodule"><span class="nav-number">5.</span> <span class="nav-text">Git Submodule</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Git-Tag"><span class="nav-number">6.</span> <span class="nav-text">Git Tag</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Liu Zhiyu</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <div class="footer-custom">Licensed under <a class="theme-link" href="http://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="external nofollow noopener noreferrer">CC BY-NC-ND 4.0</a></div>
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
+
+
+
+  
+
+  
+    <script id="dsq-count-scr" src="https://d01.disqus.com/count.js" async></script>
+  
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+  <style>
+    .copy-btn {
+      display: inline-block;
+      padding: 6px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      line-height: 20px;
+      color: #333;
+      white-space: nowrap;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #eee;
+      background-image: linear-gradient(#fcfcfc, #eee);
+      border: 1px solid #d5d5d5;
+      border-radius: 3px;
+      user-select: none;
+      outline: 0;
+    }
+
+    .highlight-wrap .copy-btn {
+      transition: opacity .3s ease-in-out;
+      opacity: 0;
+      padding: 2px 6px;
+      position: absolute;
+      right: 4px;
+      top: 8px;
+    }
+
+    .highlight-wrap:hover .copy-btn,
+    .highlight-wrap .copy-btn:focus {
+      opacity: 1
+    }
+
+    .highlight-wrap {
+      position: relative;
+    }
+  </style>
+  <script>
+    $('.highlight').each(function (i, e) {
+      var $wrap = $('<div>').addClass('highlight-wrap')
+      $(e).after($wrap)
+      $wrap.append($('<button>').addClass('copy-btn').append('Copy').on('click', function (e) {
+        var code = $(this).parent().find('.code').find('.line').map(function (i, e) {
+          return $(e).text()
+        }).toArray().join('\n')
+        var ta = document.createElement('textarea')
+        document.body.appendChild(ta)
+        ta.style.position = 'absolute'
+        ta.style.top = '0px'
+        ta.style.left = '0px'
+        ta.value = code
+        ta.select()
+        ta.focus()
+        var result = document.execCommand('copy')
+        document.body.removeChild(ta)
+        
+        $(this).blur()
+      })).on('mouseleave', function (e) {
+        var $b = $(this).find('.copy-btn')
+        setTimeout(function () {
+          $b.text('Copy')
+        }, 300)
+      }).append(e)
+    })
+  </script>
+
+
+</body>
+</html>
